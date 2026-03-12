@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>户外装备精选 | 专业测评推荐</title>
+    <meta name="description" content="专业户外装备测评，精选露营帐篷、登山背包、睡袋等装备，帮你找到最适合的户外用品">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 头部导航 */
+        header {
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c42 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* 主要内容区 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* 英雄区 */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+            border-radius: 16px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* 分类标签 */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: #2d5a27;
+            color: white;
+            border-color: #2d5a27;
+        }
+        
+        /* 产品卡片网格 */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #e85d04;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .product-image {
+            height: 250px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            position: relative;
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .stars {
+            color: #ffc107;
+        }
+        
+        .rating-score {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .product-desc {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .product-features li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #e85d04;
+        }
+        
+        .buy-btn {
+            background: linear-gradient(135deg, #ff9900 0%, #ff6600 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .buy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+        }
+        
+        /* 免责声明 */
+        .disclaimer {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 60px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .disclaimer a {
+            color: #2d5a27;
+        }
+        
+        /* 页脚 */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            .products-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                🏔️ 户外装备精选
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="outdoor-gear.html">户外装备</a>
+                <a href="#">测评文章</a>
+                <a href="#">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 英雄区 -->
+        <section class="hero">
+            <h1>专业户外装备推荐</h1>
+            <p>精选全球顶级户外品牌，专业测评 + 真实体验，帮你找到最适合的露营、登山、徒步装备</p>
+        </section>
+
+        <!-- 分类 -->
+        <div class="categories">
+            <button class="category-btn active">全部</button>
+            <button class="category-btn">⛺ 露营帐篷</button>
+            <button class="category-btn">🎒 登山背包</button>
+            <button class="category-btn">🛏️ 睡袋防潮垫</button>
+            <button class="category-btn">🔥 炉具炊具</button>
+            <button class="category-btn">🥾 户外鞋靴</button>
+        </div>
+
+        <!-- 产品列表 -->
+        <div class="products-grid">
+            <!-- 产品1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">🏆 最佳推荐</span>
+                    ⛺
+                </div>
+                <div class="product-info">
+                    <h3>REI Co-op Half Dome SL 2+</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-score">4.8/5 (2,341评价)</span>
+                    </div>
+                    <p class="product-desc">
+                        轻量化双人帐篷，重量仅3磅14盎司。 spacious interior，优秀的通风设计，5分钟快速搭建，是背包客的最佳选择。
+                    </p>
+                    <ul class="product-features">
+                        <li>重量：3磅14盎司</li>
+                        <li>容纳人数：2人</li>
+                        <li>季节：3季</li>
+                        <li>防水指数：3000mm</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="price">$329</span>
+                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 产品2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">💰 性价比之选</span>
+                    🎒
+                </div>
+                <div class="product-info">
+                    <h3>Osprey Atmos AG 65</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-score">4.7/5 (1,892评价)</span>
+                    </div>
+                    <p class="product-desc">
+                        Anti-Gravity背负系统让重物感觉更轻。65升容量适合多日徒步，出色的透气性和舒适度，是长途背包旅行的理想选择。
+                    </p>
+                    <ul class="product-features">
+                        <li>容量：65升</li>
+                        <li>重量：4.5磅</li>
+                        <li>背负系统：Anti-Gravity</li>
+                        <li>防水罩： included</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="price">$270</span>
+                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 产品3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="product-badge">🔥 热销</span>
+                    🛏️
+                </div>
+                <div class="product-info">
+                    <h3>Western Mountaineering UltraLite</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-score">4.9/5 (987评价)</span>
+                    </div>
+                    <p class="product-desc">
+                        顶级羽绒睡袋，850蓬松度鹅绒，仅重1磅13盎司。耐寒至20°F，极致轻量与保暖的完美结合，专业登山者首选。
+                    </p>
+                    <ul class="product-features">
+                        <li>填充：850蓬鹅绒</li>
+                        <li>重量：1磅13盎司</li>
+                        <li>温标：20°F / -7°C</li>
+                        <li>产地：美国制造</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="price">$525</span>
+                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 产品4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    🔥
+                </div>
+                <div class="product-info">
+                    <h3>Jetboil Flash Cooking System</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-score">4.6/5 (3,156评价)</span>
+                    </div>
+                    <p class="product-desc">
+                        100秒煮沸1升水！一体化炉具系统，紧凑轻便，自带点火器，是背包客和露营爱好者的必备装备。
+                    </p>
+                    <ul class="product-features">
+                        <li>煮沸时间：100秒/1升</li>
+                        <li>重量：13.1盎司</li>
+                        <li>燃料：异丁烷</li>
+                        <li>容量：1升</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="price">$109</span>
+                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 产品5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    🥾
+                </div>
+                <div class="product-info">
+                    <h3>Salomon Quest 4D 3 GTX</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-score">4.7/5 (2,567评价)</span>
+                    </div>
+                    <p class="product-desc">
+                        顶级登山靴，Gore-Tex防水透气，4D Advanced底盘提供卓越支撑和稳定性，适合重装徒步和技术性路线。
+                    </p>
+                    <ul class="product-features">
+                        <li>防水：Gore-Tex</li>
+                        <li>重量：2磅10盎司</li>
+                        <li>鞋帮高度：高帮</li>
+                        <li>适用：重装徒步</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="price">$230</span>
+                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 产品6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    💡
+                </div>
+                <div class="product-info">
+                    <h3>Black Diamond Spot 400</h3>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-score">4.8/5 (1,423评价)</span>
+                    </div>
+                    <p class="product-desc">
+                        400流明亮度，IPX8防水等级，多种照明模式，红光夜视模式保护夜视力。轻量设计仅2.6盎司，续航长达200小时。
+                    </p>
+                    <ul class="product-features">
+                        <li>亮度：400流明</li>
+                        <li>重量：2.6盎司</li>
+                        <li>防水：IPX8</li>
+                        <li>续航：200小时</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="price">$39</span>
+                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 免责声明 -->
+        <div class="disclaimer">
+            <p><strong>Affiliate Disclosure（联盟营销声明）</strong></p>
+            <p>本站是 Amazon Associates 联盟计划的参与者。当您通过本站链接购买商品时，我们可能会获得佣金，但这不会影响您的购买价格。</p>
+            <p>所有产品推荐基于我们的专业测评和真实使用体验，力求为您提供客观公正的购买建议。</p>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2026 户外装备精选 | 专业户外装备测评与推荐</p>
+        <p style="margin-top: 10px; font-size: 12px;">本站为 Amazon Associates 联盟成员</p>
+    </footer>
+
+    <script>
+        // 分类切换功能
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // 购买按钮点击统计（可接入Google Analytics）
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // 这里可以添加联盟链接跳转
+                // window.open('https://amazon.com/dp/xxxxx?tag=your-affiliate-id', '_blank');
+                console.log('Product clicked');
+            });
+        });
+    </script>
+</body>
+</html>
