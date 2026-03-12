@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小炮灰的个人网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+        }
+        
+        .logo {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        
+        .link-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .link-btn:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🚀</div>
+        <h1>欢迎来到小炮灰的网站</h1>
+        <p class="subtitle">
+            这是我的第一个个人网站<br>
+            由 GitHub Pages 托管
+        </p>
+        
+        <div class="links">
+            <a href="https://github.com/xiaopaohui007" class="link-btn" target="_blank">
+                📂 我的 GitHub
+            </a>
+            <a href="outdoor-gear.html" class="link-btn">
+                🏕️ 户外装备（赚钱项目）
+            </a>
+            <a href="#" class="link-btn" onclick="alert('页面开发中，敬请期待！')">
+                📝 工程方案
+            </a>
+            <a href="#" class="link-btn" onclick="alert('页面开发中，敬请期待！')">
+                📊 股票监控
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 小炮灰 | Powered by GitHub Pages</p>
+        </div>
+    </div>
+</body>
+</html>
