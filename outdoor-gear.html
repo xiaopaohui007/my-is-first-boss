@@ -244,7 +244,29 @@
             box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
         }
         
-        /* 免责声明 */
+        .associate-id {
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .associate-id h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .associate-id code {
+            background: white;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 18px;
+            color: #e85d04;
+            font-weight: bold;
+        }
+        
         .disclaimer {
             background: #f8f9fa;
             padding: 30px;
@@ -259,7 +281,6 @@
             color: #2d5a27;
         }
         
-        /* 页脚 */
         footer {
             background: #1a1a2e;
             color: white;
@@ -273,7 +294,6 @@
             font-size: 14px;
         }
         
-        /* 响应式 */
         @media (max-width: 768px) {
             .hero h1 { font-size: 28px; }
             .products-grid { grid-template-columns: 1fr; }
@@ -282,7 +302,6 @@
     </style>
 </head>
 <body>
-    <!-- 导航 -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -297,15 +316,18 @@
         </div>
     </header>
 
-    <!-- 主要内容 -->
     <div class="container">
-        <!-- 英雄区 -->
         <section class="hero">
             <h1>专业户外装备推荐</h1>
             <p>精选全球顶级户外品牌，专业测评 + 真实体验，帮你找到最适合的露营、登山、徒步装备</p>
         </section>
 
-        <!-- 分类 -->
+        <div class="associate-id">
+            <h3>🎉 Amazon Associates 已开通</h3>
+            <p>联盟ID：<code>xiaopaohui007-20</code></p>
+            <p style="margin-top: 10px; font-size: 14px;">通过本站链接购买，支持我们持续创作优质内容</p>
+        </div>
+
         <div class="categories">
             <button class="category-btn active">全部</button>
             <button class="category-btn">⛺ 露营帐篷</button>
@@ -315,7 +337,6 @@
             <button class="category-btn">🥾 户外鞋靴</button>
         </div>
 
-        <!-- 产品列表 -->
         <div class="products-grid">
             <!-- 产品1 -->
             <div class="product-card">
@@ -330,7 +351,7 @@
                         <span class="rating-score">4.8/5 (2,341评价)</span>
                     </div>
                     <p class="product-desc">
-                        轻量化双人帐篷，重量仅3磅14盎司。 spacious interior，优秀的通风设计，5分钟快速搭建，是背包客的最佳选择。
+                        轻量化双人帐篷，重量仅3磅14盎司。宽敞内部空间，优秀的通风设计，5分钟快速搭建，是背包客的最佳选择。
                     </p>
                     <ul class="product-features">
                         <li>重量：3磅14盎司</li>
@@ -340,7 +361,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="price">$329</span>
-                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                        <a href="https://www.amazon.com/s?k=REI+Half+Dome+SL2&tag=xiaopaohui007-20" class="buy-btn" target="_blank">去Amazon购买</a>
                     </div>
                 </div>
             </div>
@@ -364,11 +385,11 @@
                         <li>容量：65升</li>
                         <li>重量：4.5磅</li>
                         <li>背负系统：Anti-Gravity</li>
-                        <li>防水罩： included</li>
+                        <li>防水罩：included</li>
                     </ul>
                     <div class="product-footer">
                         <span class="price">$270</span>
-                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                        <a href="https://www.amazon.com/s?k=Osprey+Atmos+AG+65&tag=xiaopaohui007-20" class="buy-btn" target="_blank">去Amazon购买</a>
                     </div>
                 </div>
             </div>
@@ -396,7 +417,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="price">$525</span>
-                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                        <a href="https://www.amazon.com/s?k=Western+Mountaineering+Ultralite&tag=xiaopaohui007-20" class="buy-btn" target="_blank">去Amazon购买</a>
                     </div>
                 </div>
             </div>
@@ -423,7 +444,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="price">$109</span>
-                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                        <a href="https://www.amazon.com/s?k=Jetboil+Flash&tag=xiaopaohui007-20" class="buy-btn" target="_blank">去Amazon购买</a>
                     </div>
                 </div>
             </div>
@@ -450,7 +471,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="price">$230</span>
-                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                        <a href="https://www.amazon.com/s?k=Salomon+Quest+4D+GTX&tag=xiaopaohui007-20" class="buy-btn" target="_blank">去Amazon购买</a>
                     </div>
                 </div>
             </div>
@@ -477,41 +498,29 @@
                     </ul>
                     <div class="product-footer">
                         <span class="price">$39</span>
-                        <a href="#" class="buy-btn" onclick="alert('请先注册Amazon Associates获取联盟链接')">去Amazon购买</a>
+                        <a href="https://www.amazon.com/s?k=Black+Diamond+Spot+400&tag=xiaopaohui007-20" class="buy-btn" target="_blank">去Amazon购买</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 免责声明 -->
         <div class="disclaimer">
             <p><strong>Affiliate Disclosure（联盟营销声明）</strong></p>
             <p>本站是 Amazon Associates 联盟计划的参与者。当您通过本站链接购买商品时，我们可能会获得佣金，但这不会影响您的购买价格。</p>
-            <p>所有产品推荐基于我们的专业测评和真实使用体验，力求为您提供客观公正的购买建议。</p>
+            <p>联盟ID：xiaopaohui007-20 | 所有产品推荐基于我们的专业测评和真实使用体验</p>
         </div>
     </div>
 
-    <!-- 页脚 -->
     <footer>
         <p>&copy; 2026 户外装备精选 | 专业户外装备测评与推荐</p>
-        <p style="margin-top: 10px; font-size: 12px;">本站为 Amazon Associates 联盟成员</p>
+        <p style="margin-top: 10px; font-size: 12px;">本站为 Amazon Associates 联盟成员 | 联盟ID：xiaopaohui007-20</p>
     </footer>
 
     <script>
-        // 分类切换功能
         document.querySelectorAll('.category-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
-            });
-        });
-
-        // 购买按钮点击统计（可接入Google Analytics）
-        document.querySelectorAll('.buy-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                // 这里可以添加联盟链接跳转
-                // window.open('https://amazon.com/dp/xxxxx?tag=your-affiliate-id', '_blank');
-                console.log('Product clicked');
             });
         });
     </script>
